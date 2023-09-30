@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Geliştirme Yol Haritası</title>
+    <!-- <style>
+      h3 {
+        color: rebeccapurple;
+        font-size: 14px6;
+      }
+      #satır {
+        background-color: #d80032;
+        color: #f78ca2;
+        width: 100px;
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- inline css; direk etiketin içinde verdiğimiz attribute oluyor. -->
+
+    <!-- <main>
+      <section style="background-color: #d988b9; color: #ffe4d6">
+        <h2>İnline Css</h2>
+      </section>
+    </main> -->
+
+    <!-- internal css; head içersinde style diyerek etiketlere(buna selector deniyor) göre css yazdığımız zaman buna internal diyoruz. -->
+    <!-- <h3>İnternal Css</h3> -->
+
+    <!-- Bir etikete id verip ona özel bir css yazmak istersek o zaman da yine style içersinde #id diyerek css yazayabiliriz. -->
+
+    <!-- <p id="satır">id'ye göre css özelliği verme</p> -->
+
+    <!-- external css ise; ayrı bir dosyada yazdığımız css'leri istediğimiz html sayfaları ile ilişkilendirebiliyoruz böylece ortak olan css'leri her sayfada yazmak zorunda kalmıyoruz.
+    Bunu yaparkende .css uzantılı bi dosya açıp buraya css kodlarını yazıyoruz sonra bu kodları kullanmak istediğimiz html sayfasına gelip head kısmına 
+    <link rel="stylesheet" href="style.css"> yazıyoruz tabi ki css dosyanızın adı ne ise href kısmına onu yazmanız gerekiyor. -->
+
+    <h1 style="text-align: center; font-size: 16px">
+      Web Geliştirme Yol Haritası
+    </h1>
+    <ul style="list-style-type: none">
+      <li style="text-decoration: line-through; background-color: #344cb7">
+        <input type="checkbox" name="" id="" checked />Html Öğren
+      </li>
+      <li style="text-decoration: line-through; background-color: #344cb7">
+        <input type="checkbox" name="" id="" checked />Css Öğren
+      </li>
+      <li style="text-decoration: line-through; background-color: #344cb7">
+        <input type="checkbox" name="" id="" checked />Javascript Öğren
+      </li>
+      <li style="background-color: #ebe645">
+        <input type="checkbox" name="" id="" />Backend Dili Öğren
+      </li>
+      <li style="background-color: #ebe645">
+        <input type="checkbox" name="" id="" />Angular/React Öğren
+      </li>
+    </ul>
+  </body>
+</html>
