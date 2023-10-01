@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      section {
+        background-color: #8ecddd;
+      }
+      /* h1,
+      h2 {
+        color: white;
+      } */
+
+      #page-title {
+        color: white;
+      }
+      #page-subtitle {
+        color: white;
+      }
+      .page-content {
+        background-color: #ff9b50;
+        color: #e25e3e;
+      }
+      section {
+        border: 1px solid #c08261;
+      }
+      p {
+        border: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Etiketlere de direk css verebiliriz ama verdiğimiz etiketten birden fazla varsa hepsi etkilenir
+    style içersinde h2{color:red;} dersek bütün h2'lerin rengi kırmızı olur. -->
+
+    <!-- Diyelim h1 etiketine ve p etiketine aynı rengi vermek istiyoruz bunun için class oluşturabiliriz:
+     style içersine .class-adı{color:red;} yazarız ve bu class'ı hangi etikete vermek istiyorsak 
+     class="class-adı" yazarız. -->
+
+    <!-- Etiketler id'de verebiliriz ama bir sayfa içersinde bütün etiketlerin unique bir id'si olur.
+    id verirken etikete id="id_adı" deriz ve style içersinde de #id_adı{color:red;} yazarız. -->
+
+    <!-- id vererek yazdığımız css kodu her zaman etiket ismine göre olan css'den daha öncelikli olur ve ekrana o css yansır. -->
+    <!-- Ama inline olarak eklediğimiz css de id'ye göre verilmiş css'i ezer ve etiket ismine göre verilen css'i de ezer 
+        bunu tarayıcının geliştirici aracında da bunu görürüz. -->
+
+    <!-- Özet css önceliği: inline css > id'ye göre css (id selector) > class ismine göre css (class selector) > etiket adına göre (tag selector) > tarayıcı varsayılanı (browser defaults) -->
+
+    <!-- Bir section içersinde bir p etiketimiz olsun section'a bir border verelim border inherit edilebilen bir özellik değil color gibi biz verdiğimiz bu border'ı 
+    p etiketine de vermek istersek şunu yapabiliriz style içersinde p{border:inherit;} deriz yani bir üstten kapsayıcı elemandan bunu inherit et. -->
+
+    <!-- Birde kapsayıcı elemana verdiğimiz color renginin içerdeki etiketi etkilemesini istemezsekte şunu yapabiliriz style içersinde 
+    örneğin p{color:initial;} deriz tarayıcıda uygulanmış olan varsayılan başlangıç değerini al diyebiliriz.Böylece inherit'i iptal etmiş oluruz. -->
+
+    <!-- Tarayıcıda Css inherit diyerek hangi özelliklerin inherit olup olmadığına bakabiliriz. -->
+    <main>
+      <section>
+        <h1 id="page-title">Welcome</h1>
+      </section>
+      <section>
+        <h2 id="page-subtitle">Learn Css</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+          culpa.
+        </p>
+      </section>
+    </main>
+
+    <div>
+      <h3 class="page-content">Learn Html</h3>
+      <p class="page-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsum
+        ducimus sed, placeat consequuntur officia quibusdam natus? Ex totam
+        dolor doloremque, corrupti cupiditate illum culpa aliquam mollitia
+        itaque nisi sapiente.
+      </p>
+    </div>
+  </body>
+</html>
