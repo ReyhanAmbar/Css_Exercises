@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Margin, bir elementin kenarlığının (border) etrafındaki boşluktur. Padding
+    ise bir elementin kenarlığı ile içeriği arasındaki boşluktur. Başka bir
+    deyişle, margin bir elementin dışındaki boşluğu kontrol eder. Padding ise
+    bir elementin içindeki boşluğu kontrol eder.  -->
+
+    <!-- Margin collapsing; bir etikete alttan 20 margin verdik ve diğer etikete de üstten 20 margin verdik
+    aralarında 40 margin olmaz sadece 20 olur ama bir diğeri 25 olsaydı o zaman
+    en fazla değeri kabul edip aralarında 25px margin olurdu ve 5px boşluk
+    olarak gözükürdü hangi değer fazla olursa aralarına o kadarlık margin
+    koyuyor. Tek satırda margin yazabiliriz bu saat yönüne doğru olur yani
+    margin: 20px 10px 30px 40px; dersek margin-top 20px, margin-right 10px,
+    margin-bottom 30px ve margin-left 40px olur. Birde margin: 15px 15px
+    verirsek ilk değer üst-alt ve diğer değer de sağ-sol değeri temsil eder. -->
+
+    <!-- section bir block elemandır ve satırı olduğu gibi kaplar ama biz
+    ortalanmasını istiyoruz o zamanda şunu yapabiliriz section'ın width:500px
+    verip margin:auto dersek sağdan ve soldan eşit boşluk bırakır ve biz
+    tarayıcıyı küçültsek bile margin değerleri sağdan ve soldan otomatik
+    ayarlanarak eşit değer olur. -->
+
+    <section>
+      <h2 style="background-color: #d988b9; margin: 50px">Html</h2>
+      <h2 style="background-color: #c23373; padding: 50px">Css</h2>
+      <h2 style="border: 5px solid #c70039; padding: 30px">Javascript</h2>
+      <h2 style="border: 5px solid #512b81; padding: 30px; border-radius: 15px">
+        Angular
+      </h2>
+      <!-- Tarayıcıdan border'ı incelersek aşağıdaki gibi tek tek de özellikleri verebiliriz. -->
+
+      <!-- border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(199, 0, 57);
+    border-right-color: rgb(199, 0, 57);
+    border-bottom-color: rgb(199, 0, 57);
+    border-left-color: rgb(199, 0, 57);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial; -->
+    </section>
+
+    <!-- Width ve height verirken kapsayıcı elemana göre içteki etikete bu özellikleri verebiliriz. Yani section bir block elemandır ve satırı olduğu gibi kaplar.
+    section içersinde de bir p etiketi olsun p etiketi de block elemandır ve o da section gibi satırı kaplar ama biz p etiketine width:50% dersek o zaman 
+    section'ın yarısı kadar yer kaplar. Aynı bu durumu height için de yapabiliriz. -->
+    <section>
+      <p style="width: 50%">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+        perspiciatis at sunt distinctio architecto ab soluta excepturi a labore,
+        blanditiis rerum veniam magnam consectetur odit voluptate eius quod
+        necessitatibus reiciendis.
+      </p>
+    </section>
+  </body>
+</html>
