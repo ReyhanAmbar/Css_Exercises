@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* Yıldız diyerek bütün etiketleri dahil ediyoruz ve content-box varsayılan özelliği ama biz artık
+        border-box diyerek içerikleri de border ve padding'i hesaba katarak hesaplıcak. */
+      * {
+        box-sizing: border-box;
+      }
+      #initial {
+        background-color: crimson;
+        height: 500px;
+        width: 100%;
+        padding: 10px;
+        border: 5px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CSS'de box-sizing özelliği, bir etiketin toplam genişliğine ve yüksekliğine
+    padding ve border'ı dahil etmemizi sağlar. Box-sizing değeri olarak
+    border-box değeri atarsak ; bir etikette, padding ve border genişlik ve
+    yüksekliğe dahil edilir. Box-sizing özelliğini tüm etiketlerde kullanmak her
+    zaman avantajlı olacaktır. -->
+
+    <!-- Eğer box-sizing: border-box; özelliğine sahipse, elemanın ekranda görünecek
+    olan width ve height değerleri bizim verdiğimiz width ve height değerlerini
+    alırken, elemanın content alanı — varsa eğer — padding ve border değerleri
+    çıkarılarak hesaplanır. -->
+
+    <section id="initial">
+      <h2>Welcome</h2>
+    </section>
+  </body>
+</html>
