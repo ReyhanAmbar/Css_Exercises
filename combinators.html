@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* Descendant(torun anlamı katıyor) Selector örneği */
+      /* div p {
+        background-color: rebeccapurple;
+      } */
+
+      /* Child Selector örneği */
+      /* div > p {
+        background-color: rebeccapurple;
+      } */
+
+      /* Adjacent Sibling Selector örneği
+      burda yalnızca 5.paragraf boyanır çünkü div den sonra gelen o olduğu için Adjacent Sibling daha bitişik bir sonraki elemanı kastediyor. */
+      /* div + p {
+        background-color: rebeccapurple;
+      } */
+
+      /* General Sibling  örneği burda ise bir sonraki değil sadece daha sonra bütün elemanları kasteder o yüzden div'den sonra gelen 5. ve 6.paragraf boyandı. */
+      /* div ~ p {
+        background-color: rebeccapurple;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- Combinators -->
+
+    <!-- 1) Descendant Selector ( ) -->
+    <!-- 1) Child Selector (>) -->
+    <!-- 1) Adjacent Sibling Selector (+) -->
+    <!-- 1) General Sibling Selector (~) -->
+
+    <p>1.Paragraf</p>
+    <div>
+      <p>2.Paragraf</p>
+      <p>3.Paragraf</p>
+      <section>
+        <p>4.Paragraf</p>
+      </section>
+    </div>
+    <p>5.Paragraf</p>
+    <p>6.Paragraf</p>
+  </body>
+</html>
