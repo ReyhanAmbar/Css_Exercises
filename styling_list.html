@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .main-header {
+        background-color: #fcbaad;
+        padding: 16px 32px;
+      }
+      .main-nav {
+        display: inline-block;
+        /* Burda çıkardığımız 99px sol taraftaki MovieApp yazısının kapladığı alan */
+        width: calc(100% - 99px);
+        text-align: right;
+      }
+
+      #main-section {
+        background-color: #febbcc;
+        height: 200px;
+        text-align: center;
+        padding-top: 20px;
+      }
+      #content-section {
+        background-color: #e48586;
+        height: 300px;
+        text-align: center;
+        padding-top: 20px;
+      }
+      .main-nav__items {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      /* li elemanları block elemandı yan yana gelmeleri için inline-block dedik */
+      .main-nav__item {
+        display: inline-block;
+        margin: 0px 8px;
+      }
+      .main-header__logo {
+        color: #d80032;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 21px;
+      }
+      /* Burda combinators dediğimiz bir özelliği kullandık main-nav__item altındaki a etiketlerine ulaşmış olduk. */
+      .main-nav__item a {
+        text-decoration: none;
+        color: #7a316f;
+      }
+    </style>
+  </head>
+  <header class="main-header">
+    <a href="#" class="main-header__logo">MovieApp</a>
+    <nav class="main-nav">
+      <ul class="main-nav__items">
+        <li class="main-nav__item">
+          <a href="#">Home</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="#">Movies</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="main-section">
+      <h1>Welcome to MovieApp</h1>
+    </section>
+    <section id="content-section">
+      <h3>Content</h3>
+    </section>
+  </main>
+  <body></body>
+</html>
