@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Biz main*header'ın sol tarafta main-nav'in de sağ tarafta olmasını istiyoruz
+    ama burda margin işimize yaramıyor çünkü tarayıcının her genişliğinde
+    main-nav'in sağ tarafa yanaştırılması gerekiyor bunun içinde şöyle bir şey
+    yapabiliriz: main-nav'e width:calc(100% - 74px); burdaki 74px'i tarayıcıda
+    deneyerek buluyoruz yani maovieapp'in kapladığı alanı çıkarıyoruz
+    text-align:rigth; diyebiliriz. 
+    Artık taryıcıyı küçültsekte büyültsekte main-header hep solda ve main-nav de hep sağda olur. -->
+    <style>
+      body {
+        margin: 0px;
+      }
+      .main-header {
+        background-color: #fcbaad;
+      }
+      .main-nav {
+        display: inline-block;
+        width: calc(100% - 74px);
+        text-align: right;
+      }
+      a {
+        color: #7a316f;
+      }
+
+      #main-section {
+        background-color: #febbcc;
+        height: 200px;
+        text-align: center;
+        padding-top: 20px;
+      }
+      #content-section {
+        background-color: #e48586;
+        height: 300px;
+        text-align: center;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <a href="#">MovieApp</a>
+      <nav class="main-nav">
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section id="main-section">
+        <h1>Welcome to MovieApp</h1>
+      </section>
+      <section id="content-section">
+        <h3>Content</h3>
+      </section>
+    </main>
+  </body>
+</html>
