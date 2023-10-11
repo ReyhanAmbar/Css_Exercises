@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      a {
+        border: 1px solid gray;
+        padding: 5px 8px;
+        display: inline-block;
+        text-decoration: none;
+        /* bütün a etiketleri içerikleri kadar yer kaplar bu yüzden birbirlerinden farklı genişlikteler ama biz hepsine ortak(sabit) bir width verebiliriz. */
+        width: 60px;
+        text-align: center; /* yazıları ortalamak için */
+      }
+
+      /* pseudo classes */
+
+      /* ilk baştaki hali */
+      a:link {
+        color: red;
+      }
+      /* ziyaret edildiği hali */
+      a:visited {
+        color: green;
+      }
+      /* üzerine gelindiğinde */
+      a:hover {
+        color: white;
+        background-color: yellow;
+      }
+
+      /* sol tık yapıp üzerinde kalırsakta bu rengi görürüz */
+      a:active {
+        color: white;
+        background-color: violet;
+      }
+      /* Biz div etiketine hover olduğumuz zaman p etiketinin gözükmesini istiyoruz bu yüzden böyle yaptık 
+      div'e hover oluyoruz css'i p etiketine yazıyoruz.*/
+      div:hover p {
+        display: block;
+      }
+      p {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- pseudo classes aracılığı ile biz a etiketlerine belli durumları
+    verebiliriz yani örneğin a etiketine tıkladığımız anda ya da üzerine
+    geldiğimiz anda ya da daha önceden bu sayfayı ziyaret etti mi etmedi mi
+    şeklinde bazı durumlar atayabiliyoruz. -->
+
+    <!-- Burda Home ilk başta yeşil renk olcak çünkü daha önce ziyeret edilmiş bir
+    sayfayı verdik ama diper ikisi kırmızı olur çünkü öyle bir sayfa yok. -->
+
+    <!-- Birde yukardaki sıra ile kullanmak önemli daha sonradan karışmaması için -->
+    <a href="combinators.html">Home</a>
+    <a href="display.html1">Products</a>
+    <a href="navbar1.html">About</a>
+    <br /><br />
+    <div>
+      Click Here!
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+        suscipit consequatur placeat exercitationem, omnis, ipsum sit libero in
+        quia aspernatur impedit consectetur voluptatibus, eos sed facere quidem.
+        Eum, nemo at.
+      </p>
+    </div>
+  </body>
+</html>
