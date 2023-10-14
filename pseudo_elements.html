@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p::first-line {
+        font-weight: bold;
+        color: brown;
+        word-spacing: 5px; /* kelimeler arası boşluk */
+        letter-spacing: 3px; /* harfler arası boşluk */
+      }
+      /* Burda p etiketini seç ama p etiketine class olarak about verilmiş olanı seç demiş olduk.
+      Eğer p .about dersek yani bir boşluk bırakırsak o zaman p etiketinin altındaki about clasına sahip olan bütün elemanlar olarak kastedilmiş olur.  
+      Ya da p#about dersekte id'sine about verilmiş olan p etiketini seçmiş oluruz.*/
+
+      p.about::first-line {
+        color: green;
+      }
+      p::first-letter {
+        font-size: 48px;
+      }
+      /* Seçtiğimiz yazının arka plan rengini değiştirebiliyoruz.Bir kapsamda belirtebiliriz yani p::selection dersek o zaman sadece p etiketinde bu işe yarar. */
+      ::selection {
+        background-color: hotpink;
+      }
+      /* p etiketinin sonuna emoji eklemek istersek ::after diyebiliriz. \işaretinden sonra hex değerlerini yazarak verebiliriz. */
+      p::after {
+        content: "\1F601";
+        font-size: 35px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Pseudo elements kullanarak herhangi bir elementin bir parçasına müdahale etmiş oluyoruz.  -->
+    <!-- Pseudo elements için :: yapısını kullanıyoruz. Pseudo classes da ise : yapısını kullanıyoruz. -->
+    <!-- İkisini de kullanabiliriz ama bir içeriğin belli bir parçasını seçmek
+    istediğimizde element olarak kullanıca, state ile ilgili bir işlem için de
+    classes kullanıyoruz. -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, sint
+      nobis? Minima ducimus nesciunt nostrum consequuntur eos quibusdam tempora
+      architecto mollitia impedit corrupti itaque maxime fugit, explicabo
+      consectetur laborum et.Minima ducimus nesciunt nostrum consequuntur eos
+      quibusdam tempora architecto mollitia impedit corrupti itaque maxime
+      fugit, explicabo consectetur laborum et.
+    </p>
+
+    <p class="about">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, sint
+      nobis? Minima ducimus nesciunt nostrum consequuntur eos quibusdam tempora
+      architecto mollitia impedit corrupti itaque maxime fugit, explicabo
+      consectetur laborum et.Minima ducimus nesciunt nostrum consequuntur eos
+      quibusdam tempora architecto mollitia impedit corrupti itaque maxime
+      fugit, explicabo consectetur laborum et.
+    </p>
+  </body>
+</html>
