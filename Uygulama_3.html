@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .main-header {
+        background-color: #fcbaad;
+        padding: 16px 32px;
+      }
+      .main-nav {
+        display: inline-block;
+
+        width: calc(100% - 99px);
+        text-align: right;
+      }
+
+      #main-section {
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNIfQV0od7Pi-ricM9t7Y4e3KD52Yu5xW8ew&usqp=CAU");
+        background-position: center; /*burda position'da top left(üsttün sol tarafını göster) ya da center right(resmin ortasının sağ tarafını göster) gibi ifadelerde yazabiliriz. */
+        height: 300px;
+        padding-top: 20px;
+      }
+      #content-section {
+        /* background-color: #e48586; */
+        height: 500px;
+        padding-top: 20px;
+        text-align: center;
+      }
+      .main-nav__items {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+
+      .main-nav__item {
+        display: inline-block;
+        margin: 0px 8px;
+      }
+      .main-header__logo {
+        color: #d80032;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 21px;
+      }
+
+      .main-nav__item a {
+        text-decoration: none;
+        color: #7a316f;
+      }
+
+      .main-nav__item::before {
+        content: "\2022";
+        color: #7a316f;
+      }
+
+      .main-nav__item a:hover,
+      .main-nav__item:hover::before {
+        color: white;
+      }
+
+      .main-nav__item:active::before,
+      .main-nav__item a:active {
+        color: #d80032;
+      }
+
+      .main-nav__item__login a {
+        color: #7a316f;
+        background-color: #e48586;
+        padding: 4px 16px;
+        border-radius: 8px;
+        border: 2px solid white;
+      }
+
+      .main-nav__item__login::before {
+        content: none;
+      }
+      .main-nav__item__login a:hover {
+        color: #e48586;
+        background-color: #7a316f;
+        border: 2px solid #e48586;
+      }
+      .row {
+        margin-bottom: 40px;
+      }
+      .col {
+        display: inline-block;
+        width: 30%;
+        padding: 16px;
+        margin: 8px;
+      }
+      #content-section h3 {
+        font-size: 30px;
+        font-weight: 600;
+        color: #3e4555;
+      }
+      .row h4 {
+        color: #3e4555;
+        font-size: 26px;
+      }
+    </style>
+  </head>
+  <header class="main-header">
+    <a href="#" class="main-header__logo">MovieApp</a>
+    <nav class="main-nav">
+      <ul class="main-nav__items">
+        <li class="main-nav__item">
+          <a href="#">Filmler</a>
+        </li>
+        <li class="main-nav__item">
+          <a href="#">Diziler</a>
+        </li>
+        <li class="main-nav__item main-nav__item__login">
+          <a href="#">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="main-section">
+      <h1 style="color: white">Welcome to MovieApp</h1>
+    </section>
+    <section id="content-section">
+      <div class="row">
+        <h3>Content</h3>
+        <p>You can access your favorite movies and TV series on this site!</p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4>Register</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia,
+            alias eos sapiente voluptatum voluptas ullam!
+          </p>
+        </div>
+        <div class="col">
+          <h4>Choose a Plan</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia,
+            alias eos sapiente voluptatum voluptas ullam!
+          </p>
+        </div>
+        <div class="col">
+          <h4>Enjoy Movies</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia,
+            alias eos sapiente voluptatum voluptas ullam!
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <body></body>
+</html>
