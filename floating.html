@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        /* text-align: right; bu özellik işe yaramaz */
+        /* float: right; Bunu yazınca aslında container'ın alanı içerik kadar yer kaplamış oldu ve dikey olarak sağ tarafa geldiler.
+        Yani container block özelliğini kaybetti diyebiliriz. */
+        background-color: #d83f31;
+      }
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: #b0578d;
+        float: right; /*sağ tarafta yan yana gelirler */
+      }
+      #box1 {
+        float: left; /*ilk kutu sol tarafta olur.*/
+      }
+
+      /* Bu da ikinci yöntem clearfix bu class'ı container'a verirsek şunu demiş oluyoruz: 
+      container div etiketinin pseudo elementine after diyerek yani ilgili elementten sonra görünmeyen bir içerik ekliycez
+      ve bu elemanı block olarak işaretliycez ve daha sonrada clear both diycez.
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- Floating; nesneleri sayfa üzerinde konumlandırmak için kullandığımız bir özellik. -->
+    <!-- İnline ve inline-block elemanlara text-align özelliği ile yerlerini
+    değiştirebiliriz yani bir block eleman içersinde üç tane yan yana inline
+    elemanımız olsun bunları text-align ile sol-orta ya da sağ tarafa
+    alabiliriz. -->
+    <!-- Ama alt alta olan üç tane block elemanı text-align özelliği ile bunu yapamayız bunun yerine floating'i kullanırız.
+    Block elemanları satırda hareket ettirmek istersek float özelliğini kullanabiliriz. 
+    Örneğin bir kapsamımız var ve bu kapsam içersinde üç tane block eleman var ve bunlara genişlik ve yükseklik verdik ve ayrıca bunlar alt alta.
+    Biz burdaki block elemanlara float özelliğini tek tek uygularsak bu durumda aynen inline-block da olduğu gibi bir davranış gösterir.
+    Yani bunların hepsine float left dediğimizde container içersinde sola yanaşabilir ya da içlerinden bir tanesine float right diyerek sağ tarafa alabiliriz. -->
+
+    <div id="container">
+      <div class="box" id="box1">Kutu 1</div>
+      <div class="box">Kutu 2</div>
+      <div class="box">Kutu 3</div>
+      <div style="clear: both"></div>
+      <!--  Bunu yazarak hem container'ın zemin rengi geldi ekrana hem de p etiketi aşağıya gelmiş oldu.-->
+    </div>
+
+    <!-- p etiketinin container'ın altına gelmesini bekliyoruz ama container ile aynı
+    hizada oluyor bunun düzelmesi için nerden float uygulamışsak onu
+    temizlememiz gerekiyor. -->
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam
+      asperiores repudiandae in ipsam, reprehenderit voluptatem perspiciatis
+      nulla sit, illo magni quisquam quam ducimus, quo consectetur iste hic.
+      Maxime, earum cumque?
+    </p>
+    <!-- Clear floating; float uygulamış olduğumuz bir nesneden sonra gelen
+    elemanlları normal akış içerisinde devam edebilmesi için bir clear
+    uygulamamız gerekiyor yani aslında burda float'ı temizleme olayını
+    etkinleştirmemiz gerekiyor. -->
+  </body>
+</html>
