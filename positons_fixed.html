@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        height: 1280px;
+      }
+      .box {
+        padding: 10px;
+        border: 5px solid #6d5b95;
+        margin-bottom: 10px;
+      }
+      .navbar {
+        background-color: #feb236;
+        margin-top: 100px; /*navbar'ın sayfada gözükmesi için verdik. */
+      }
+      .content {
+        background-color: #d64161;
+        /* position: absolute; */
+        width: 100%;
+        /* z-index: -1;  */ /* footer öne gelir content arkaya gider. */
+        top: 0;
+        position: fixed;
+      }
+      .footer {
+        background-color: #ff7b25;
+        width: 100%;
+        bottom: 0px;
+        position: fixed; /* footer'ı da aşağıya sabitledik */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- position : static | relative | fixed | absolute | sticky -->
+
+    <!-- Herhangi bir nesneye biz absolute ya da fixed gibi bir position özelliği
+    verdiğimizde bu nesneye ayrıca bir z-index denilen bir özellik
+    verebiliyoruz. z-index'te burdaki elemanların üst üste gelmesinde hangisi
+    öne çıksın bunu belirtmek için kullanılır.Çünkü eğer biz content'e
+    position:absolute verirsek içerik kadar yer kaplar inline eleman gibi bunu
+    düzeltmek için width:100% deriz ve content navbar'ı görür ve onun altında
+    olur ama footer content'i görmez bu yüzden direk navbar'ın altına gelir ama
+    content de orda orda olduğu için content'in altında kalır.
+    Bu yüzden hangisinin önde olacağına z-index ile karar verebiliriz.
+    Content'i arka tarafa itmek için eksi bir değer vermeliyiz -->
+
+    <!-- Şimdi biz sayfada scroll çıkması için body'e bir yükseklik verdik ve
+    content'e top:0 diyerek yukarda olmasını sağladık ama biz şunu istiyoruz
+    scroll iel sayfada aşağıya doğru insek bile yani görünür alanımız değişse
+    bile content'in yukarda hep sabit kalmasını istiyoruz işte bunu fixed ile
+    yapabiliriz. -->
+
+    <div id="container">
+      <div class="box navbar">Navbar</div>
+      <div class="box content">Content</div>
+      <div class="box footer">Footer</div>
+    </div>
+  </body>
+</html>
