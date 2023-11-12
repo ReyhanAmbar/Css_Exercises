@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #header {
+        position: relative;
+        background-image: url(https://wallpapers.com/images/hd/blue-aesthetic-moon-df8850p673zj275y.jpg);
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* background-size: 800px 600px,cover ; dersek resmi bu verdiğimiz px değerlerine göre sığdırır ve sığmayan kısım varsa keser.
+        sadece cover da diyebiliriz ya da contain dersekte çerçeve içersine resmi yerleştirir ama 
+        kesilcek alan varsa yani resmin orjinal en boy oranı korunur ve dışta kalan alanlar ise kesilir. */
+      }
+      #header h1 {
+        margin: 0;
+        position: absolute;
+        font-size: 80px;
+        color: #427d9d;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tarayıcıda default olarak background resmi  sol üst köşeden konumlanır.Tabi biz bunu isteğimize göre değiştirebiliriz. 
+     Resmin her zaman sağ alt tarafı gösterilsin istersek background-position değerine bottom right diyebiliriz böylece 
+     tarayıcıyı küçültsek bile her zaman sağ alt taraf gözükür. Birde ,background-repeat diye bir özellik var 
+     bu da resmin tekrar etmesi ile ilgiili biz buna no-repeat dersek tekrar etmez ya sağdan devam etsin gibi de diyebiliriz
+     bu tekrar olayıda şundan oluyor eğer biz background resmine soldan margin verdik diyelim solda kalan kısımda resmin bir kısmı gelir. 
+    background-size diye bir özelliğimiz var eğer bu özelliğe genişlik yükseklik sabit bir değer verirsek bu durumda bir çerçeve yani
+    resmin yerleştirileceği bir çerçeveyi tanımlamış oluyoruz.-->
+    <div id="header">
+      <h1>Background Text</h1>
+    </div>
+    <img class="logo" src="logo.png" alt="" />
+  </body>
+</html>
