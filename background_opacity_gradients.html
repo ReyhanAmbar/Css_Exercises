@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Farklı çözünürlükteki web sayfaları için her zaman sabit bir şekilde background resmimizin sayfanın yarısını
+        kaplamasını istersek ilk önce body ve html'in yüksekliğine yüzde yüz dememiz gerekir(tabi bu viewport yani kullanıcının gördüğü kısım).
+        Ve resmine de yükseklğine yüzde elli dersek biz tarayıcıyı küçültsek bile her zaman taarayıcının yarısını kaplamış olur.
+        Viewport, bir web sayfasında kullanıcının görüntüleyebildiği alandır. Viewport'lar cihaza göre farklılık gösterir;
+        mobil cihazlarda daha küçük ebatta iken, masaüstü bilgisayarlarda ise ebatı büyüktür. */
+
+      /* html,
+      body {
+        height: 100%;
+      } */
+      body {
+        margin: 0;
+      }
+      #header {
+        position: relative;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(230, 255, 230, 0.7),
+            rgba(102, 255, 102, 0.7)
+          ),
+          url(https://wallpapers.com/images/hd/blue-aesthetic-moon-df8850p673zj275y.jpg);
+        /* height: 100%; */
+        height: 100vh;
+        /* yorum satırına aldığımız kısımları direk böyle de yapabiliriz bu şu demek görünür alanın yüksekliğinin yüzde yüzünü al ya da 50vh deseydik yüzde ellisini al demiş olcaktık*/
+        width: 100vw; /*bu da viewport  width yani genişlikte yüzde seksen yer kaplasın diyebiliriz*/
+      }
+      #header h1 {
+        margin: 0;
+        /* eğer bunu vermeseydik h1'in margin değeri background resmini aşağıya iterdi. */
+        position: absolute;
+        font-size: 80px;
+        color: #427d9d;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /*sayfada tam ortalansın diye yaptık*/
+      }
+      .cover {
+        position: absolute; /*kendisini içinde bulunduğu id=header'a göre konumlandırcak*/
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #79155b;
+        opacity: 0.2;
+      }
+      .logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Background Text</h1>
+    </div>
+    <img class="logo" src="logo.png" alt="" />
+    <div class="cover"></div>
+  </body>
+</html>
