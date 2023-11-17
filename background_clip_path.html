@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #header {
+        position: relative;
+        background-image: url(https://wallpapers.com/images/hd/blue-aesthetic-moon-df8850p673zj275y.jpg);
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); */
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+      }
+      #header h1 {
+        margin: 0;
+        position: absolute;
+        font-size: 80px;
+        color: #427d9d;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- background resimlerimizi şekillere göre maskeleyebiliriz bunu da clip-path ile yapıyoruz. -->
+    <div id="header">
+      <h1>Background Text</h1>
+    </div>
+    <img class="logo" src="logo.png" alt="" />
+  </body>
+</html>
