@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Attribute Selectors */
+
+      /* a etiketlerinden target attribute'ü tanımlanmış olanın background color'ını red yap demiş olduk */
+      /* a[target] {
+        background-color: red;
+      } */
+      /* sayfa üzerinde class tanımlanmış bütün elemanlara ulaşır */
+      /* [class] {
+        background-color: blue;
+      } */
+
+      /* Attribute value Selector */
+      /* burda da class'ı active olanları bul ve sarı yap demiş olduk */
+      /* [class="active"] {
+        background-color: yellow;
+      } */
+      /* ya da sadece class'ı active olan a etiketini alırız span etiketini almayız */
+      /* a[class="active"] {
+        background-color: yellow;
+      } */
+
+      /* Attribute '*' Selector */
+      /* içerisinde active class olan bütün elemanları kapsamış oluyoruz yani içinde active class'a sahip olan bütün elemanları alıyoruz*/
+      /* [class*="active"] {
+        background-color: green;
+      } */
+
+      /* Attribute '~' Selector */
+      /* bu selector'ün * selectorden farkı diyelim ki span'ın active-span şeklinde class'ı var * selector şöyle yapıyor içindeki active geçen varsa tamam deyip alıyor
+      ama ~ selector ise sadece active olanı alıyor active-span'ını almıyor. */
+      /* [class~="active"] {
+        background-color: green;
+      } */
+
+      /* Attribute '|' Selector */
+      /* burda ise ilgili value bilgisi sadece başlangıçta olcak yani örneğin spandaki class'ların sırası şu şekilde olsaydı
+      text span active şeklinde olsaydı span'ını almazdı sadece active class'ı başta olanları alır ve başka elemanları da kabul etmez
+      yani active span text şeklinde de olsaydı kabul etmezdi çünkü arada boşluk ve başka class'larda var ama sadece tek class'ı olup şu 
+      şekilde olsaydı active-span bunu kabul ederdi. */
+      /* [class|="active"] {
+        background-color: green;
+      } */
+
+      /* Attribute '^' Selector */
+      /* burda ise | selectorden tek farkı active span'ını kabul eder yani boşluktan sonra gelen başka class tanımlamaları olabilir ama tabi ki active'in başta olması lazım */
+      /* [class^="active"] {
+        background-color: green;
+      } */
+
+      /* Attribute '$' Selector */
+      /* burda ise active class'ın sonda olursa seçiliyor yani span text active olursa çalışır ve tabiki tek active class'ı olan da da çalışır */
+      /* [class$="active"] {
+        background-color: green;
+      } */
+    </style>
+  </head>
+  <body>
+    <span class="active span text">title</span>
+    <nav>
+      <a href="" target="_blank">home</a>
+      <a href="" class="active">about</a>
+      <a href="" class="link">contact</a>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+.signup-page {
+  padding-top: 20px;
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 30px;
+  color: #2e4c6d;
+  margin-top: 60px;
+}
+
+.signup-form {
+  width: 500px;
+  margin: auto;
+}
+/* .signup-form input:not([type="checkbox"]) burda şunu demiş oluyoruz type'ı checkbox olanları çıkar dahil etme demiş olduk
+dahil ettiğimiz checkbox kutucuğu satırı kaplıyor ama bunu yazarak yine varsayılan olarak inline eleman haline gelmiş oldu */
+.signup-form label,
+.signup-form input:not([type="checkbox"]),
+.signup-form select {
+  display: block;
+  width: 100%;
+  /* burdaki width değeri yukarda kapsayıcı elemana verdiğimiz 500px'in yüzde yüzünü kaplar */
+  margin-top: 10px;
+}
+
+/* şimdi yukarda checkbox'ı tekrardan inline yapmıştık şimdi de checbox ve label'ın yan yana gelmesini istiyoruz bunun içinde şunu yazıyoruz */
+/* .signup-form input[type="checkbox"]+ label burda da şunu demiş olduk inputtan sonra gelen ilk label'ı al + selector (css + selector diye arama  yapabilirsin) 
+bunu yapıyordu önceki bölümlerde yapmıştık */
+
+.signup-form input[type="checkbox"],
+.signup-form input[type="checkbox"] + label {
+  display: inline-block;
+  width: auto;
+  margin-top: 20px;
+}
+
+.signup-form button[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  padding: 7px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #fcbaad;
+  color: #2e4c6d;
+  border: 2px solid #fcbaad;
+}
+
+.signup-form button:hover[type="submit"] {
+  background-color: #2e4c6d;
+  color: #fcbaad;
+}
+
+.signup-form input:not([type="checkbox"]),
+.signup-form select {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+}
+
+/* input type checkbox olanları çıkar ve focus olayına odaklan demiş olduk */
+.signup-form input:not([type="checkbox"]):focus,
+.signup-form select:focus {
+  outline: none;
+  background-color: #d988b9;
+  color: #fff;
+  border: 1px solid #b0578d;
+}
+
+.signup-form input[type="checkbox"] {
+  /* varsayılan tarayıcı görüntüsünü kapatır */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #2e4c6d;
+  vertical-align: bottom;
+  border-radius: 50%;
+}
+
+.signup-form input[type="checkbox"]:hover {
+  background: gray;
+}
+
+.signup-form input[type="checkbox"]:checked {
+  background: #fcbaad;
+}
