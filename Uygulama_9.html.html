@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      /* scroll'un yavaş bir şekilde yukarı çıkması için kullandık */
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0px;
+      }
+      .main-header {
+        background-color: #fcbaad;
+        padding: 16px 32px;
+        /* main-header'ın en yukarda sabit kalması için yazdık */
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+      }
+      main {
+        margin-top: 50px;
+      }
+      .main-nav {
+        display: inline-block;
+
+        width: calc(100% - 99px);
+        text-align: right;
+      }
+
+      #main-section {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(252, 186, 173, 0.2),
+            rgba(250, 110, 82, 0.2)
+          ),
+          url(movieapp.webp);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 80vh;
+        width: 100%;
+        position: relative;
+      }
+      #main-section .content {
+        color: #fff;
+        font-size: 30px;
+        background: rgba(46, 76, 109, 0.3);
+        padding: 20px;
+        width: 60%;
+        border-radius: 10px;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #main-section h1 {
+        position: absolute;
+        top: 50%;
+        margin: 0px;
+        color: #be3144;
+        font-size: 45px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #content-section {
+        height: 500px;
+        padding-top: 20px;
+        text-align: center;
+      }
+      .main-nav__items {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+
+      .main-nav__item {
+        display: inline-block;
+        margin: 0px 8px;
+      }
+      .main-header__logo {
+        color: #d80032;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 21px;
+      }
+
+      .main-nav__item a {
+        text-decoration: none;
+        color: #7a316f;
+      }
+
+      .main-nav__item::before {
+        content: "\2022";
+        color: #7a316f;
+      }
+
+      .main-nav__item a:hover,
+      .main-nav__item:hover::before {
+        color: white;
+      }
+
+      .main-nav__item:active::before,
+      .main-nav__item a:active {
+        color: #d80032;
+      }
+
+      .main-nav__item__login a {
+        color: #7a316f;
+        background-color: #e48586;
+        padding: 4px 16px;
+        border-radius: 8px;
+        border: 2px solid white;
+      }
+
+      .main-nav__item__login::before {
+        content: none;
+      }
+      .main-nav__item__login a:hover {
+        color: #e48586;
+        background-color: #7a316f;
+        border: 2px solid #e48586;
+      }
+      .row {
+        margin-top: 40px;
+      }
+      .row::after {
+        /* row kapsayıcı eleman olduğu için içindeki col'larda float kullandık bu yüzden kapsayıcı elemandan olan row'un after'ında clearfix kullandık */
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .col-4 {
+        float: left;
+        width: 25%;
+      }
+      .col-3 {
+        float: left;
+        width: 33.3%;
+        padding-right: 5px;
+      }
+      .col-2 {
+        float: left;
+        width: 50%;
+        height: 150px;
+        /* background-color: #fcbaad; */
+      }
+      #content-section h3 {
+        font-size: 30px;
+        font-weight: 600;
+        color: #3e4555;
+      }
+      .row h4 {
+        color: #3e4555;
+        font-size: 26px;
+      }
+      .col-3 i {
+        color: #d80032;
+      }
+
+      .features__left img {
+        height: 100%;
+        width: 100%;
+        background-position: top center;
+        background-size: cover;
+      }
+      .features__right {
+        padding: 40px;
+        vertical-align: top;
+      }
+      .features__right h3 {
+        font-size: 30px;
+      }
+      #features a {
+        color: #7a316f;
+        background-color: #e48586;
+        padding: 4px 16px;
+        border-radius: 8px;
+        border: 2px solid white;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        margin-top: 15px;
+      }
+      #features a:hover {
+        color: #e48586;
+        background-color: #7a316f;
+        border: 2px solid #e48586;
+        text-align: center;
+      }
+
+      .features__left,
+      .features__right {
+        height: 350px;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .plan {
+        text-align: center;
+        padding: 5px;
+      }
+      .plan__badge {
+        background-color: white;
+        color: #e48586;
+        padding: 8px;
+        border-radius: 5px;
+      }
+      .recommended_plan {
+        background-color: #79155b !important;
+        color: #ff9b50;
+      }
+      .inner-plan {
+        background-color: #fcbaad;
+        padding: 25px 10px;
+        border-radius: 5px;
+        box-shadow: 5px 10px 15px 5px #888888;
+        transition: box-shadow 0.2s;
+      }
+      .inner-plan:hover {
+        box-shadow: 5px 10px 15px 5px #79155b;
+      }
+      .plan__features {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      .plan--featured {
+        position: relative;
+        top: -20px;
+      }
+      .plan__features li {
+        margin: 6px 0px;
+      }
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .container {
+        margin: 0 auto;
+        width: 1000px;
+      }
+      #backtotop {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+      }
+      #backtotop i {
+        color: #d80032;
+        font-size: 45px;
+        transition: color 0.6s;
+      }
+      #backtotop i:hover {
+        color: #79155b;
+      }
+      .counter {
+        background: linear-gradient(to bottom, #fcbaad 0%, #fc785e 100%);
+        text-align: center;
+        padding: 50px;
+      }
+      .counter__item {
+        font-size: 30px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .counter h2 {
+        margin: 0px;
+        color: #fff;
+        font-size: 20px;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 10px 10px 40px rgba(52, 58, 64, 0.1);
+        position: relative;
+        /* relative dedik çünkü normal akışın dışına çıkma olduğun konumdan itibaren yukarıya al demek için yani hover olunduğunda */
+        top: 0;
+        /* top:0 demeseydik başlangıç noktası belirtmediğimiz için çalışmazdı yani top:0 dan top:-20 ye oynatıyoruz */
+        transition: all 0.3s;
+        /* all diyerek bütün property'ler için transition verebiliyoruz biz card'lar için 3 saniye de yukarı çıksın demiş olduk. */
+      }
+      /* card'ın üzerine geldiğimizde position ile oynadık ve -20 diyerek card'a hover olunduğunda yukarı kaydırmış olduk */
+      .card:hover {
+        top: -20px;
+        /* şöylede yapabilirdik yukarda card'a verdiğimiz top:0 ve position:relative ile hiç uğraşmadan ve burda hover olduğunda top:-20 değerini vermeden de
+        tek satırda yine burda yani hover da transform: translateY(-10px) diyebilirdik dikey konumda nesneyi olduğu yerden -10px yukarı al demiş olduk
+        +10px aşağıya alırdı ve translateX de yatay da aynı işlemleri yapar. */
+      }
+      .card-body {
+        padding: 30px;
+        text-align: center;
+      }
+      footer {
+        background-color: #fcbaad;
+        padding: 30px;
+        margin-top: 30px;
+      }
+      footer a {
+        color: #79155b;
+        font-size: 20px;
+        text-decoration: none;
+      }
+      footer ul {
+        margin: 0;
+        padding: 0;
+      }
+      footer ul li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 5px;
+      }
+      .social-links {
+        text-align: right;
+      }
+      .fab {
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        /* ikonları yuvarlak yapmak için border-radius değeri verdik */
+      }
+      .fab:hover {
+        opacity: 0.7;
+      }
+      .fa-facebook {
+        background-color: #3b5998;
+        color: #fff;
+      }
+      .fa-twitter {
+        background-color: #55acee;
+        color: #fff;
+      }
+      .fa-instagram {
+        background-color: #125688;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body id="body">
+    <header class="main-header">
+      <div class="container">
+        <a href="#" class="main-header__logo">MovieApp</a>
+        <nav class="main-nav">
+          <ul class="main-nav__items">
+            <li class="main-nav__item">
+              <a href="#">Filmler</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#">Diziler</a>
+            </li>
+            <li class="main-nav__item main-nav__item__login">
+              <a href="#">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="main-section">
+        <div class="content">
+          <h2>Welcome</h2>
+          <h3>
+            Millions of movies, TV shows and people to discover. Explore now.
+          </h3>
+        </div>
+      </section>
+      <section id="content-section">
+        <div class="container">
+          <div class="row">
+            <h3>Content</h3>
+            <p>
+              You can access your favorite movies and TV series on this site!
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <i class="fa-solid fa-right-to-bracket fa-2x"></i>
+              <h4>Register</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia,
+                alias eos sapiente voluptatum voluptas ullam!
+              </p>
+            </div>
+            <div class="col-3">
+              <i class="fa-brands fa-buffer fa-2x"></i>
+              <h4>Choose a Plan</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia,
+                alias eos sapiente voluptatum voluptas ullam!
+              </p>
+            </div>
+            <div class="col-3">
+              <i class="fa-sharp fa-solid fa-video fa-2x"></i>
+              <h4>Enjoy Movies</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia,
+                alias eos sapiente voluptatum voluptas ullam!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="features">
+        <div class="row">
+          <div class="col-2 features__left">
+            <img src="resim.webp" alt="" />
+          </div>
+          <div class="col-2 features__right">
+            <h3>Watch all Movies & TV Shows once they get released!</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              amet modi illum, nihil reiciendis explicabo quam sed deleniti hic
+              harum, quia asperiores iure veniam quaerat. Officia inventore
+              animi voluptatem non.
+            </p>
+            <a href="#">View Features</a>
+          </div>
+        </div>
+      </section>
+      <section id="plans">
+        <h2 class="section-title">Become a Premium Member</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-3 plan">
+              <div class="inner-plan">
+                <h2>Free</h2>
+                <h3>0/Month</h3>
+                <ul class="plan__features">
+                  <li>HD Available</li>
+                  <li>Unlimited Movies and Tv Shows</li>
+                  <li>Watch on your phone & tablet</li>
+                  <li>Download and watch offline</li>
+                  <li>Screens you can watch</li>
+                  <li>First Month Free</li>
+                </ul>
+                <div>
+                  <button>Choose Plan</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-3 plan plan--featured">
+              <div class="inner-plan recommended_plan">
+                <h2 class="plan__badge">Recommended</h2>
+                <h2>Basic</h2>
+                <h3>$9.99/Month</h3>
+                <ul class="plan__features">
+                  <li>HD Available</li>
+                  <li>Unlimited Movies and Tv Shows</li>
+                  <li>Watch on your phone & tablet</li>
+                  <li>Download and watch offline</li>
+                  <li>Screens you can watch</li>
+                  <li>First Month Free</li>
+                </ul>
+                <div>
+                  <button>Choose Plan</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-3 plan">
+              <div class="inner-plan">
+                <h2>Premium</h2>
+                <h3>$19.99/Month</h3>
+                <ul class="plan__features">
+                  <li>HD Available</li>
+                  <li>Unlimited Movies and Tv Shows</li>
+                  <li>Watch on your phone & tablet</li>
+                  <li>Download and watch offline</li>
+                  <li>Screens you can watch</li>
+                  <li>First Month Free</li>
+                </ul>
+                <div>
+                  <button>Choose Plan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="counters">
+        <div class="row counter">
+          <div class="col-3">
+            <span class="counter__item">974</span>
+            <h2>Movies</h2>
+          </div>
+          <div class="col-3">
+            <span class="counter__item">456</span>
+            <h2>Tv Shows</h2>
+          </div>
+          <div class="col-3">
+            <span class="counter__item">976</span>
+            <h2>Users</h2>
+          </div>
+        </div>
+      </section>
+      <section id="movies">
+        <h2 class="section-title">Latest Movies & Tv Shows</h2>
+        <div class="row">
+          <div class="col-3">
+            <div class="card">
+              <!-- bir resmin içinde bulunduğu card genişliği aynı olmasını istersek resmin genişliğine 100% deriz böylece responsive bir tasarım da yapmış oluruz. -->
+              <img
+                class="card-img"
+                src="film_1.jpeg"
+                alt=""
+                width="613px"
+                height="500px"
+              />
+              <div class="card-body">
+                <h2>Star Wars</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Consequuntur dicta ex a debitis excepturi laboriosam!
+                </p>
+                <p>
+                  <button>Details</button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                class="card-img"
+                src="film_2.webp"
+                alt=""
+                width="613px"
+                height="500px"
+              />
+              <div class="card-body">
+                <h2>Mario</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Consequuntur dicta ex a debitis excepturi laboriosam!
+                </p>
+                <p>
+                  <button>Details</button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img
+                class="card-img"
+                src="film_3.webp"
+                alt=""
+                width="613px"
+                height="500px"
+              />
+              <div class="card-body">
+                <h2>Hobbit</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Consequuntur dicta ex a debitis excepturi laboriosam!
+                </p>
+                <p>
+                  <button>Details</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="row">
+        <div class="container">
+          <div class="col-2">
+            <ul class="footer-links">
+              <li><a href="">About</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Forum</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="social-links">
+              <li><a class="fab fa-facebook" href=""></a></li>
+              <li><a class="fab fa-twitter" href=""></a></li>
+              <li><a class="fab fa-instagram" href=""></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Burdaki ikona tıklayınca scroll yavaşça yukarı çıkıcak -->
+    <a href="#body" id="backtotop">
+      <i class="fas fa-chevron-circle-up"></i>
+    </a>
+  </body>
+</html>
