@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- cihazlarda tarayıcının genişliğini tespit edemediğimizden dolayı responsive bir tasarım oluşturamıyoruz bu yüzden 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> bu etiket bunu tespit etmemiz için gerekli -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: gray;
+      }
+      /* Biz tarayıcı min-width 400px ve üzerine çıktığında yeşil olmasını istersek şunu yazıyoruz. */
+
+      /* @media (min-width: 400px) {
+        body {
+          background-color: green;
+        }
+      } */
+      /* phone içinde max-width 575px olana kadar yukarda body'e verdiğimiz default gray rengi olur. */
+      @media (max-width: 575px) {
+        #phone h1 {
+          display: block;
+        }
+      }
+      /* landscape */
+      @media (min-width: 576px) and (max-width: 767px) {
+        body {
+          background-color: green;
+        }
+        #landscape h1 {
+          display: block;
+        }
+      }
+      /* tables */
+      @media (min-width: 768px) and (max-width: 991px) {
+        body {
+          background-color: red;
+        }
+        #tables h1 {
+          display: block;
+        }
+      }
+      /* desktop */
+      @media (min-width: 992px) and (max-width: 1199px) {
+        body {
+          background-color: orange;
+        }
+        #desktop h1 {
+          display: block;
+        }
+      }
+      /* large desktop */
+      @media (min-width: 1200px) {
+        body {
+          background-color: pink;
+        }
+        #largeDesktop h1 {
+          display: block;
+        }
+      }
+      /* İlk başta bütün h1'leri kapatalım genişliklerine göre açalım */
+      h1 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Biz tarayıcının genişliğini css tarafından tespit etmemiz gerekiyor örneğin
+    biz bir sınır belirtebiliriz 400px altı olduğu zaman mobil cihazlarda
+    olduğumuzu anlayabiliriz ve farklı css kuralları uygulayabiliriz ya da
+    400-500px arasında tablet ve 500px den daha büyük olursa normal bir
+    monitörden sayfamızı ziyaret ettiği gibi ayırabiliriz. Bunları media queries
+    ile tespit ediyoruz. -->
+
+    <div id="phone"><h1>phone</h1></div>
+    <div id="landscape"><h1>landscape</h1></div>
+    <div id="tables"><h1>tables</h1></div>
+    <div id="desktop"><h1>desktop</h1></div>
+    <div id="largeDesktop"><h1>large Desktop</h1></div>
+  </body>
+</html>
