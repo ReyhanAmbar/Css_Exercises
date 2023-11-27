@@ -1,0 +1,402 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+
+* {
+  box-sizing: border-box;
+}
+/* scroll'un yavaş bir şekilde yukarı çıkması için kullandık */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0px;
+}
+.main-header {
+  background-color: #fcbaad;
+  padding: 16px 32px;
+  /* main-header'ın en yukarda sabit kalması için yazdık */
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+main {
+  margin-top: 50px;
+}
+.main-nav {
+  display: inline-block;
+
+  width: calc(100% - 99px);
+  text-align: right;
+}
+
+#main-section-img {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(252, 186, 173, 0.2),
+      rgba(250, 110, 82, 0.2)
+    ),
+    url(movieapp.webp);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 40vh;
+  width: 100%;
+  position: relative;
+}
+@media (min-width: 576px) {
+  #main-section-img {
+    height: 50vh;
+  }
+  #main-section .content {
+    font-size: 23px;
+  }
+}
+@media (min-width: 768px) {
+  #main-section-img {
+    height: 60vh;
+  }
+  #main-section .content {
+    font-size: 25px;
+  }
+}
+@media (min-width: 992px) {
+  #main-section-img {
+    height: 70vh;
+  }
+  #main-section .content {
+    font-size: 27px;
+  }
+}
+
+#main-section .content {
+  color: #fff;
+  font-size: 20px;
+  background: rgba(46, 76, 109, 0.3);
+  padding: 20px;
+  width: 60%;
+  border-radius: 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#main-section h1 {
+  position: absolute;
+  top: 50%;
+  margin: 0px;
+  color: #be3144;
+  font-size: 45px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#content-section {
+  height: 500px;
+  padding-top: 20px;
+  text-align: center;
+}
+.main-nav__items {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.main-nav__item {
+  display: inline-block;
+  margin: 0px 8px;
+}
+.main-header__logo {
+  color: #d80032;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.main-nav__item a {
+  text-decoration: none;
+  color: #7a316f;
+}
+
+.main-nav__item::before {
+  content: "\2022";
+  color: #7a316f;
+}
+
+.main-nav__item a:hover,
+.main-nav__item:hover::before {
+  color: white;
+}
+
+.main-nav__item:active::before,
+.main-nav__item a:active {
+  color: #d80032;
+}
+
+.main-nav__item__login a {
+  color: #7a316f;
+  background-color: #e48586;
+  padding: 4px 16px;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+.main-nav__item__login::before {
+  content: none;
+}
+.main-nav__item__login a:hover {
+  color: #e48586;
+  background-color: #7a316f;
+  border: 2px solid #e48586;
+}
+.row {
+  margin-top: 40px;
+}
+.row::after {
+  /* row kapsayıcı eleman olduğu için içindeki col'larda float kullandık bu yüzden kapsayıcı elemandan olan row'un after'ında clearfix kullandık */
+  content: "";
+  display: block;
+  clear: both;
+}
+.col-4 {
+  float: left;
+  width: 25%;
+}
+.col-3 {
+  float: left;
+  width: 33.3%;
+  padding-right: 5px;
+}
+.col-2 {
+  float: left;
+  width: 50%;
+  height: 150px;
+  background-color: #fcbaad;
+}
+#content-section h3 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #3e4555;
+}
+.row h4 {
+  color: #3e4555;
+  font-size: 26px;
+}
+.col-3 i {
+  color: #d80032;
+}
+
+.features__left img {
+  height: 100%;
+  width: 100%;
+  background-position: top center;
+  background-size: cover;
+}
+.features__right {
+  padding: 40px;
+  vertical-align: top;
+}
+.features__right h3 {
+  font-size: 30px;
+}
+#features a {
+  color: #7a316f;
+  background-color: #e48586;
+  padding: 4px 16px;
+  border-radius: 8px;
+  border: 2px solid white;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  margin-top: 15px;
+}
+#features a:hover {
+  color: #e48586;
+  background-color: #7a316f;
+  border: 2px solid #e48586;
+  text-align: center;
+}
+
+.features__left,
+.features__right {
+  height: 350px;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.plan {
+  text-align: center;
+  padding: 5px;
+}
+.plan__badge {
+  background-color: white;
+  color: #e48586;
+  padding: 8px;
+  border-radius: 5px;
+}
+.recommended_plan {
+  background-color: #79155b !important;
+  color: #ff9b50;
+}
+.inner-plan {
+  background-color: #fcbaad;
+  padding: 25px 10px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 15px 5px #888888;
+  transition: box-shadow 0.2s;
+}
+.inner-plan:hover {
+  box-shadow: 5px 10px 15px 5px #79155b;
+}
+.plan__features {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.plan--featured {
+  position: relative;
+  top: -20px;
+}
+.plan__features li {
+  margin: 6px 0px;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container {
+  width: 100%;
+}
+#backtotop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+#backtotop i {
+  color: #d80032;
+  font-size: 45px;
+  transition: color 0.6s;
+}
+#backtotop i:hover {
+  color: #79155b;
+}
+.counter {
+  background: linear-gradient(to bottom, #fcbaad 0%, #fc785e 100%);
+  text-align: center;
+  padding: 50px;
+}
+.counter__item {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+.counter h2 {
+  margin: 0px;
+  color: #fff;
+  font-size: 20px;
+}
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 10px 10px 40px rgba(52, 58, 64, 0.1);
+  position: relative;
+  /* relative dedik çünkü normal akışın dışına çıkma olduğun konumdan itibaren yukarıya al demek için yani hover olunduğunda */
+  top: 0;
+  /* top:0 demeseydik başlangıç noktası belirtmediğimiz için çalışmazdı yani top:0 dan top:-20 ye oynatıyoruz */
+  transition: all 0.3s;
+  /* all diyerek bütün property'ler için transition verebiliyoruz biz card'lar için 3 saniye de yukarı çıksın demiş olduk. */
+}
+/* card'ın üzerine geldiğimizde position ile oynadık ve -20 diyerek card'a hover olunduğunda yukarı kaydırmış olduk */
+.card:hover {
+  top: -20px;
+  /* şöylede yapabilirdik yukarda card'a verdiğimiz top:0 ve position:relative ile hiç uğraşmadan ve burda hover olduğunda top:-20 değerini vermeden de
+    tek satırda yine burda yani hover da transform: translateY(-10px) diyebilirdik dikey konumda nesneyi olduğu yerden -10px yukarı al demiş olduk
+    +10px aşağıya alırdı ve translateX de yatay da aynı işlemleri yapar. */
+}
+.card-body {
+  padding: 30px;
+  text-align: center;
+}
+footer {
+  background-color: #fcbaad;
+  padding: 30px;
+  margin-top: 30px;
+  position: relative;
+  bottom: -200px;
+}
+footer a {
+  color: #79155b;
+  font-size: 20px;
+  text-decoration: none;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 5px;
+}
+.social-links {
+  text-align: right;
+}
+.fab {
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 50%;
+  /* ikonları yuvarlak yapmak için border-radius değeri verdik */
+}
+.fab:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+.fa-twitter {
+  background-color: #55acee;
+  color: #fff;
+}
+.fa-instagram {
+  background-color: #125688;
+  color: #fff;
+}
+
+/* media queries css */
+@media (min-width: 576px) {
+  .container {
+    margin: 0 auto;
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    margin: 0 auto;
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    margin: 0 auto;
+    width: 1320px;
+  }
+}
